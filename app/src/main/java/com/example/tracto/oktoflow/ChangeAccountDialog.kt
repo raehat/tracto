@@ -17,7 +17,7 @@ class ChangeAccountDialog(private val dataList: List<MyTokensAdapter.MyTokensDat
         val recyclerView = binding.recyclerViewPortfolio
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val adapter = MyTokensAdapter(dataList)
+        val adapter = MyTokensAdapter(requireActivity(), dataList, false)
         recyclerView.adapter = adapter
 
         return AlertDialog.Builder(requireContext())

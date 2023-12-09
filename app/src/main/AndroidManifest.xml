@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Tracto"
         tools:targetApi="31">
         <activity
+            android:name=".oktoflow.SendTokensActivity"
+            android:exported="false" />
+        <activity
             android:name=".oktoflow.OktoHomePage"
             android:exported="false" />
         <activity

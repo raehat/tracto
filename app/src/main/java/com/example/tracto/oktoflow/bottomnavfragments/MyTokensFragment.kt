@@ -33,7 +33,7 @@ class MyTokensFragment : Fragment() {
                         ))
                 }
                 binding.recyclerViewMyTokens.layoutManager = LinearLayoutManager(requireContext())
-                binding.recyclerViewMyTokens.adapter = MyTokensAdapter(list)
+                binding.recyclerViewMyTokens.adapter = MyTokensAdapter(requireActivity(), list, false)
                 binding.progressBar.visibility = View.GONE
             }
         }
