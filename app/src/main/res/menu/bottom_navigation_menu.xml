@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/fragment_my_tokens"
+        android:icon="@drawable/baseline_account_balance_wallet_24"
+        android:title="My Account" />
+    <item
         android:id="@+id/fragment_send_tokens"
         android:icon="@drawable/baseline_monetization_on_24"
         android:title="Send Tokens" />

@@ -3,10 +3,13 @@ package com.example.tracto.oktoflow
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tracto.R
 import com.example.tracto.databinding.ActivityOktoHomePageBinding
+import com.example.tracto.oktoflow.bottomnavfragments.MyTokensFragment
 import com.example.tracto.oktoflow.bottomnavfragments.SendTokensFragment
 import com.example.tracto.oktoflow.bottomnavfragments.SentTokensFragment
 import com.example.tracto.oktoflow.bottomnavfragments.UnclaimedTokensFragment
@@ -25,8 +28,16 @@ class OktoHomePage : AppCompatActivity() {
             OktoWallet.authenticate(it) { result, error ->
                 // wallet address of the user
                 binding.textViewAccountAddress.text = result!![0].address
+                binding.textViewAccount.text = result[0].networkName
                 print("result: $result error: $error")
             }
+        }
+
+        OktoWallet.getPortfolio { result, error ->
+            if (result != null) {
+                Toast.makeText(this, "LOL: ${result.size}", Toast.LENGTH_LONG).show()
+            }
+            Log.d("TAG", "LOL: ${error}")
         }
 
         binding.apply {
@@ -41,6 +52,11 @@ class OktoHomePage : AppCompatActivity() {
                 )
             )
 
+            textViewAccount.setOnClickListener {
+                val changeAccountDialog = ChangeAccountDialog(context = this@OktoHomePage)
+                changeAccountDialog.show()
+            }
+
             bottomNavigation.itemIconTintList = iconColorStates
             bottomNavigation.itemTextColor = iconColorStates
 
@@ -51,6 +67,7 @@ class OktoHomePage : AppCompatActivity() {
                     R.id.fragment_send_tokens -> selectedFragment = SendTokensFragment()
                     R.id.fragment_view_sent_tx -> selectedFragment = SentTokensFragment()
                     R.id.fragment_view_unclaimed_tx -> selectedFragment = UnclaimedTokensFragment()
+                    R.id.fragment_my_tokens -> selectedFragment = MyTokensFragment()
                 }
 
                 selectedFragment?.let {
