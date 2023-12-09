@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_send_tokens"
+        android:icon="@drawable/baseline_monetization_on_24"
+        android:title="Send Tokens" />
+    <item
+        android:id="@+id/fragment_view_sent_tx"
+        android:icon="@drawable/baseline_arrow_circle_right_24"
+        android:title="Sent Tokens" />
+    <item
+        android:id="@+id/fragment_view_unclaimed_tx"
+        android:icon="@drawable/baseline_assignment_24"
+        android:title="Unclaimed Tokens" />
+</menu>
