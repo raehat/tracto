@@ -3,12 +3,11 @@ package com.example.tracto.oktoflow
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tracto.R
 import com.example.tracto.databinding.ActivityOktoHomePageBinding
+import com.example.tracto.oktoflow.adapter.MyTokensAdapter
 import com.example.tracto.oktoflow.bottomnavfragments.MyTokensFragment
 import com.example.tracto.oktoflow.bottomnavfragments.SendTokensFragment
 import com.example.tracto.oktoflow.bottomnavfragments.SentTokensFragment
@@ -33,13 +32,6 @@ class OktoHomePage : AppCompatActivity() {
             }
         }
 
-        OktoWallet.getPortfolio { result, error ->
-            if (result != null) {
-                Toast.makeText(this, "LOL: ${result.size}", Toast.LENGTH_LONG).show()
-            }
-            Log.d("TAG", "LOL: ${error}")
-        }
-
         binding.apply {
 
             val iconColorStates = ColorStateList(
@@ -53,8 +45,22 @@ class OktoHomePage : AppCompatActivity() {
             )
 
             textViewAccount.setOnClickListener {
-                val changeAccountDialog = ChangeAccountDialog(context = this@OktoHomePage)
-                changeAccountDialog.show()
+
+                OktoWallet.getPortfolio { result, error ->
+                    if (result != null) {
+                        val list : MutableList<MyTokensAdapter.MyTokensData> = mutableListOf()
+                        for (portfolioToken in result) {
+                            list.add(
+                                MyTokensAdapter.MyTokensData(
+                                portfolioToken.tokenName,
+                                portfolioToken.quantity,
+                                portfolioToken.amountInInr
+                            ))
+                        }
+                        val changeAccountDialog = ChangeAccountDialog(list)
+                        changeAccountDialog.dialog?.show()
+                    }
+                }
             }
 
             bottomNavigation.itemIconTintList = iconColorStates
@@ -78,7 +84,7 @@ class OktoHomePage : AppCompatActivity() {
             }
 
             // Set the default fragment
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, SendTokensFragment()).commit()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, MyTokensFragment()).commit()
         }
 
     }

@@ -15,6 +15,8 @@ class SendTokensFragment : Fragment() {
     ): View? {
         val binding = FragmentSendTokensBinding.inflate(layoutInflater)
 
+
+
         return binding.root
     }
 }
