@@ -5,26 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_view_token_amt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10 MATIC"
-        android:layout_centerHorizontal="true"
-        android:textSize="30sp"
-        android:textColor="@color/basicColor"
-        android:layout_marginTop="40dp"/>
-
-    <TextView
-        android:id="@+id/text_view_token_inr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_token_amt"
-        android:text="618 INR"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp"
-        android:textColor="#7C7C7C"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,6 +59,44 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="USDT"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/basic_button"
+            android:backgroundTint="#EAEAEA"
+            android:paddingHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source Chain (Click to Change)"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button_source_chain"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Polygon"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/basic_button"
+            android:backgroundTint="#EAEAEA"
+            android:paddingHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination Chain (Click to Change)"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button_destination_chain"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Linea"
             android:layout_marginTop="10dp"
             android:background="@drawable/basic_button"
             android:backgroundTint="#EAEAEA"

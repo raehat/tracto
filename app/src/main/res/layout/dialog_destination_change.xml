@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:layout_height="70dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/text_view_token_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/polygon_matic_icon"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/text_linea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Linea"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/basicColor"/>
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/text_view_token_img_0"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/polygon_matic_icon"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/text_mantle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mantle"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/basicColor"/>
+
+            <LinearLayout
+                android:id="@+id/linear1_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/text_view_token_img_00"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/polygon_matic_icon"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/text_scroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scroll"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/basicColor"/>
+
+            <LinearLayout
+                android:id="@+id/linear1_00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/text_view_token_img_"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/polygon_matic_icon"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/text_arbitrum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arbitrum"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="20sp"
+                android:textColor="@color/basicColor"/>
+
+            <LinearLayout
+                android:id="@+id/linear1_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

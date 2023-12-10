@@ -38,6 +38,13 @@ import kotlin.coroutines.resumeWithException
 
 class SendTokensSheet(private val context : FragmentActivity) : BottomSheetDialogFragment() {
 
+    val addressDictionary = mapOf(
+        "l" to "0xEf1835957091F7d100b2648B9D6D9a4Bf76EaC2E", // Linea
+        "m" to "0x9A6fD057Ece6c98b2679971bB72474B84E52D399", // Mantle
+        "s" to "0xEf1835957091F7d100b2648B9D6D9a4Bf76EaC2E", // Scroll
+        "a" to "0xEf1835957091F7d100b2648B9D6D9a4Bf76EaC2E" // Arbitrum
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -105,30 +112,45 @@ class SendTokensSheet(private val context : FragmentActivity) : BottomSheetDialo
 ////            val encodedFunction = FunctionEncoder.encode(function)
 ////            println("Encoded function data: $encodedFunction")
 ////
-////            OktoWallet.getWallets {result, error ->
-////                val web3 = Web3j.build(HttpService("https://polygon-mumbai.infura.io/v3/39b2abffe10e4659a12074ce9a344bae"))
-////
-////                val function = Function(
-////                    "allowance",
-////                    listOf(Address(result!![0].address), Address("0x2c80688bd7D367A269a3C7fA05597188264D0614")),
-////                    listOf(object : TypeReference<Uint256?>() {})
-////                )
-////
-////                val encodedFunction = FunctionEncoder.encode(function)
-////
-////                val ethCall = web3.ethCall(
-////                    Transaction.createEthCallTransaction(
-////                        result[0].address,
-////                        "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889",
-////                        encodedFunction
-////                    ),
-////                    DefaultBlockParameterName.LATEST
-////                ).sendAsync().get()
-////
-////                println("serror: ${ethCall.error.data}")
+//            OktoWallet.getWallets {result, error ->
+//                val web3 = Web3j.build(HttpService("https://polygon-mumbai.infura.io/v3/39b2abffe10e4659a12074ce9a344bae"))
+//
+//                val function = Function(
+//                    "allowance",
+//                    listOf(Address(result!![0].address), Address("0x2c80688bd7D367A269a3C7fA05597188264D0614")),
+//                    listOf(object : TypeReference<Uint256?>() {})
+//                )
+//
+//                val encodedFunction = FunctionEncoder.encode(function)
+//
+//                val ethCall = web3.ethCall(
+//                    Transaction.createEthCallTransaction(
+//                        result[0].address,
+//                        "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889",
+//                        encodedFunction
+//                    ),
+//                    DefaultBlockParameterName.LATEST
+//                ).sendAsync().get()
+//
+//                println("serror: ${ethCall.error.data}")
 ////
 ////            }
 //        }
+
+        binding.buttonTokenChange.setOnClickListener {
+            val bottomSheetFragment = TokenChangeDialog()
+            bottomSheetFragment.show(context.supportFragmentManager, bottomSheetFragment.tag)
+        }
+
+        binding.buttonSourceChain.setOnClickListener {
+            val bottomSheetFragment = ButtonSourceChainDialog()
+            bottomSheetFragment.show(context.supportFragmentManager, bottomSheetFragment.tag)
+        }
+
+        binding.buttonDestinationChain.setOnClickListener {
+            val bottomSheetFragment = ButtonDestinationChainDialog()
+            bottomSheetFragment.show(context.supportFragmentManager, bottomSheetFragment.tag)
+        }
 
         binding.buttonSend.setOnClickListener {
 
@@ -150,7 +172,7 @@ class SendTokensSheet(private val context : FragmentActivity) : BottomSheetDialo
                     result!![0].networkName,
                     encodedFunction,
                     result[0].address,
-                    "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889",
+                    "0x2c80688bd7D367A269a3C7fA05597188264D0614",
                     "0x00"
                 ) { result, error ->
                     if (result != null)
