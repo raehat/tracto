@@ -29,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_token_inr"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
         android:layout_marginHorizontal="40dp"
         android:orientation="vertical">
 
@@ -40,6 +41,7 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/edit_text_receiving_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Recipient address"
@@ -56,6 +58,7 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/edit_text_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter amount"
@@ -77,6 +80,18 @@
             android:layout_height="50dp"
             android:hint="USDT"
             android:layout_marginTop="10dp"
+            android:background="@drawable/basic_button"
+            android:backgroundTint="#EAEAEA"
+            android:paddingHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:paddingVertical="5dp" />
+
+        <Button
+            android:id="@+id/button_send"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Send"
+            android:layout_marginTop="30dp"
             android:background="@drawable/basic_button"
             android:backgroundTint="#EAEAEA"
             android:paddingHorizontal="20dp"
